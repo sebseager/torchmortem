@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.venv/
+
+# Example outputs
+examples/*.html
+examples/*.json
+
+# macOS
+.DS_Store

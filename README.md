@@ -47,16 +47,12 @@ autopsy.report("autopsy_report.html")
 
 ## How it works
 
-`torchmortem` is built using a plugin architecture for maximum extensibility. 
-**Collectors** (implementing `Collector` in `collectors/base.py`) attach PyTorch 
-hooks to a model and record raw signals during training. 
-**Detectors** (implementing `Detector` in `detectors/base.py`) analyze the collected 
-signals and return **findings**.
-The **interpreter** (`DefaultInterpreter` in `interpreters/default.py`, override-able 
-via the protocol in `interpreters/base.py`) synthesizes the findings from all 
-detectors by applying the **rules** defined in `interpreters/rules`.
-Finally, the interpreter produces human-readable reports using **renderers** 
-(defined in `renderers/`).
+`torchmortem` is built using a plugin architecture for maximum extensibility.
+
+- **Collectors** (implementing `Collector` in `collectors/base.py`) attach PyTorch hooks to a model and record raw signals during training.
+- **Detectors** (implementing `Detector` in `detectors/base.py`) analyze the collected signals and return **findings**.
+- The **interpreter** (`DefaultInterpreter` in `interpreters/default.py`, override-able via the protocol in `interpreters/base.py`) synthesizes the findings from all detectors by applying the **rules** defined in `interpreters/rules`.
+- The interpreter produces human-readable reports using **renderers** (defined in `renderers/`).
 
 ## Built-in feature set
 

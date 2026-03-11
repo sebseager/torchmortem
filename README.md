@@ -2,9 +2,8 @@
 
 **Diagnostic autopsy for PyTorch training runs.**
 
-`torchmortem` hooks into your PyTorch training loop and produces a diagnostic 
-report (an "autopsy", if you will) telling you why your training might be broken 
-and how to fix it.
+`torchmortem` hooks into your PyTorch training loop and produces a "postmortem" 
+diagnostic report telling you why your training might be broken and how to fix it.
 
 If you need full-fledged experiment tracking, hyperparameter sweeps, or collaborative 
 dashboards, this is probably not the right tool. Instead, go look at platforms like
@@ -21,7 +20,7 @@ source .venv/bin/activate
 uv pip install -e ".[dev]"
 ```
 
-Or install from PyPI (once published):
+Or install from PyPI:
 
 ```bash
 pip install torchmortem

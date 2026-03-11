@@ -110,8 +110,8 @@ See the `examples/` directory:
 
 ## Contributing
 
-Contributions are welcome! `torchmortem`'s plugin architecture aims to make it 
-relatively easy for contributors to add new features. Please refer to 
+Contributions are welcome! The plugin architecture aims to make it relatively 
+easy for contributors to add new features. Please refer to 
 [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Custom detector example

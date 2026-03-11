@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "torchmortem"
 version = "0.1.0"
-description = "Diagnostic autopsy for PyTorch training runs."
+description = "Diagnostic autopsy for PyTorch training runs"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"

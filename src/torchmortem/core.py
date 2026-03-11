@@ -22,7 +22,7 @@ from torchmortem.types import (
     resolve_sampling,
 )
 
-logger = logging.getLogger("torchmortem")
+logger = logging.getLogger(__name__)
 
 
 class Autopsy:
@@ -176,7 +176,9 @@ class Autopsy:
         findings: list[Finding] = []
         for detector in self._detectors:
             # Check that required collectors are present.
-            missing = [r for r in detector.required_collectors if r not in collector_states]
+            missing = [
+                r for r in detector.required_collectors if r not in collector_states
+            ]
             if missing:
                 logger.warning(
                     "Detector '%s' skipped -- missing collectors: %s",
@@ -261,7 +263,6 @@ class Autopsy:
 
         if self._report is None:
             if self._attached:
-                # Still attached -- detach first.
                 self.detach()
             else:
                 raise RuntimeError(
@@ -270,7 +271,7 @@ class Autopsy:
 
         assert self._report is not None
 
-        # Infer format from extension if not specified.
+        # Infer format from extension if not specified
         if fmt is None:
             ext = path.suffix.lower()
             fmt_map = {".html": "html", ".htm": "html", ".json": "json"}
@@ -294,7 +295,7 @@ class Autopsy:
     def _atexit_handler(self) -> None:
         """Generate partial report if training crashes."""
         if self._attached and not self._report_generated:
-            logger.warning("torchmortem: training did not complete -- generating partial report.")
+            logger.warning("Training did not complete, generating partial report.")
             try:
                 self.detach(is_complete=False)
                 self.report("autopsy_crash_report.html")

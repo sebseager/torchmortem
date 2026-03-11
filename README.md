@@ -2,8 +2,9 @@
 
 **Diagnostic autopsy for PyTorch training runs.**
 
-`torchmortem` hooks into your PyTorch training loop and produces a "postmortem" 
-diagnostic report telling you why your training might be broken and how to fix it.
+`torchmortem` hooks into your [PyTorch](https://github.com/pytorch/pytorch) training 
+loop and produces a "postmortem" diagnostic report telling you why your training 
+might be broken and how to fix it.
 
 If you need full-fledged experiment tracking, hyperparameter sweeps, or collaborative 
 dashboards, this is probably not the right tool. Instead, go look at platforms like
